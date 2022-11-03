@@ -36,7 +36,10 @@ function checkStorage() {
 
 function clearStorage(event) {
   event.preventDefault();
-  localStorage.clear();
-  form.reset();
-  console.log(formData);
+
+  if(formData.email !== '' || formData.message !== '') {
+    localStorage.clear();
+    form.reset();
+    console.log(formData);
+  }
 }
